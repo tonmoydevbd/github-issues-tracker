@@ -22,30 +22,33 @@
 </head>
 
 <body>
-  hollo world...
+  <main class="login-form-container">
+    <img src="./assets/github-logo.png" alt="github logo">
+    <h1>Github Issues Tracker</h1>
+    <p>Sign in to manage your issues</p>
+    <form action="">
+      <div class="input-item">
+        <label for="name">Username</label>
+        <input type="text" name="name" id="name" placeholder="enter username">
+        <p class="default-text">Default: admin</p>
+      </div>
+      <div class="input-item">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="enter password">
+        <p class="default-text">Default: admin123</p>
+      </div>
+      <button>sign in</button>
+    </form>
+    <p class="divider-text">or</p>
+    <p>Demo Credentials:</p>
+    <div class="default-info">
+      <p><span>Username:</span> admin</p>
+      <p><span>Password:</span> admin123</p>
+    </div>
+  </main>
 
 
   <script src="./scripts/main.js"></script>
 </body>
-<main>
-  <img src="./assets/github-logo.png" alt="github logo">
-  <h1>Github Issues Tracker</h1>
-  <p>Sign in to manage your issues</p>
-  <form action="">
-    <label for="name">Username</label>
-    <input type="text" name="name" id="name">
-    <p>Default: admin</p>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-    <p>Default: admin123</p>
-    <button>sign in</button>
-    <p>or</p>
-    <p>Demo Credentials:</p>
-    <div>
-      <p>Username: admin</p>
-      <p>Password: admin123</p>
-    </div>
-  </form>
-</main>
 
 </html>
