@@ -1,6 +1,8 @@
 let allIssues;
 let openIssues;
 let closedIssues;
+const issueCountEl = document.querySelector('#issue-count');
+
 setTimeout(() => {
   fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then(res => res.json())
@@ -19,7 +21,7 @@ const cardContainer = document.querySelector('.card-container');
 
 function manageLoading(container, status) {
   if (status) {
-    container.innerHTML = `<span class="loading loading-spinner loading-xl mx-auto"></span>`
+    container.innerHTML = `<span class="loading loading-spinner loading-xl text-center"></span>`
   }
 }
 
@@ -28,6 +30,7 @@ function renderCard(data) {
   cardContainer.innerHTML = '';
   if (!data) {
     manageLoading(cardContainer, true);
+    return;
   } else {
     data.forEach(issue => {
       cardContainer.innerHTML += `
@@ -52,10 +55,7 @@ function renderCard(data) {
   `
     });
   }
-}
-function showDate(inp) {
-  const date = new Date(inp);
-  return date.toLocaleDateString('en-US');
+  issueCountEl.innerText = data.length;
 }
 
 
@@ -63,7 +63,7 @@ allTab.addEventListener('click', () => {
   allTab.classList.add('active-tab');
   openTab.classList.remove('active-tab');
   closedTab.classList.remove('active-tab');
-  renderCard(allIssues)
+  renderCard(allIssues);
 })
 
 openTab.addEventListener('click', () => {
@@ -80,10 +80,15 @@ closedTab.addEventListener('click', () => {
   renderCard(closedIssues);
 })
 
-renderCard(allIssues)
+// renderCard(allIssues)
+manageLoading(cardContainer, true);
 
 
 // all function 
 
 
 
+function showDate(inp) {
+  const date = new Date(inp);
+  return date.toLocaleDateString('en-US');
+}
