@@ -3,7 +3,6 @@ const passwordEl = document.querySelector('#password');
 const signInBtn = document.querySelector('#sign-in-btn');
 const errorMessage = document.querySelector('.error-message');
 
-
 signInBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const isValidName = nameEl.value === 'admin';

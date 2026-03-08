@@ -55,7 +55,7 @@ button:active {
 }
 
 #search-btn,
-.active-btn {
+.active-tab {
   background-color: #4A00FF;
   color: white;
   border: none;
@@ -347,7 +347,7 @@ hr {
 .card-footer {
   font-size: .75rem;
   padding-top: 1rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .5rem; */
 }
