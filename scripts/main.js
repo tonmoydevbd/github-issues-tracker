@@ -9,7 +9,7 @@ signInBtn.addEventListener('click', (e) => {
   const isValidName = nameEl.value === 'admin';
   const isValidPassword = passwordEl.value === 'admin123';
   if (isValidName && isValidPassword) {
-    window.location.assign('./dashbord.html');
+    window.location.assign('./dashboard.html');
   } else {
     errorMessage.classList.remove('hide');
     nameEl.value = '';

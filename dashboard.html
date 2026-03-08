@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Issue Tracker</title>
+  <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- custom css  -->
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-img">
+        <img src="./assets/github-logo.png" alt="github logo">
+      </div>
+      <h1>github issues tracker</h1>
+    </div>
+    <div class="search-form">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" placeholder="Search issues..." id="search-input">
+      <button id="search-btn">
+        <i class="fa-solid fa-plus"></i>
+        new issue</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tab-container">
+      <button class="active-btn">all</button>
+      <button>open</button>
+      <button>closed</button>
+    </div>
+    <div class="issue-status-bar">
+      <div class="issue-count-container">
+        <div class="aperture-icon">
+          <img src="./assets/Aperture.png" alt="">
+        </div>
+        <div class="issue-count">
+          <h3>50 Issues</h3>
+          <p>Track and manage your project issues</p>
+        </div>
+      </div>
+      <div class="indicator">
+        <p>
+          <i class="fa-solid fa-circle green-circle"></i>
+          Open
+        </p>
+        <p>
+          <i class="fa-solid fa-circle purple-circle"></i>
+          Closed
+        </p>
+      </div>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="status-icon">
+            <img src="./assets/Open-Status.png" alt="">
+          </div>
+          <p class="priority">High</p>
+        </div>
+        <h3 class="card-title">Fix navigation menu on mobile devices</h3>
+        <p class="card-description">The navigation menu doesn't collapse properly on mobile devices...</p>
+        <div class="card-labels-container">
+          <p class="card-label">bug</p>
+          <p class="card-label">help wanted</p>
+        </div>
+        <hr>
+        <div class="card-footer">
+          <p class="card-author">#1 by john_doe</p>
+          <p class="card-created-date">1/15/2024</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>

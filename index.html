@@ -23,18 +23,20 @@
 
 <body>
   <main class="login-form-container">
-    <img src="./assets/github-logo.png" alt="github logo">
+    <div class="login-page-logo">
+      <img src="./assets/github-logo.png" alt="github logo">
+    </div>
     <h1>Github Issues Tracker</h1>
     <p>Sign in to manage your issues</p>
     <form action="">
       <div class="input-item">
         <label for="name">Username</label>
-        <input type="text" name="name" id="name" placeholder="enter username">
+        <input value="admin" type="text" name="name" id="name" placeholder="enter username">
         <p class="default-text">Default: admin</p>
       </div>
       <div class="input-item">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="enter password">
+        <input value="admin123" type="password" name="password" id="password" placeholder="enter password">
         <p class="default-text">Default: admin123</p>
       </div>
       <button id="sign-in-btn">sign in</button>
