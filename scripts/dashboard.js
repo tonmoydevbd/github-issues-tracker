@@ -31,27 +31,31 @@ function renderCard(data) {
   } else {
     data.forEach(issue => {
       cardContainer.innerHTML += `
-    <div class="card ${issue.status === "open" ? 'green-border' : 'red-border'}">
+      <div class="card ${issue.status === "open" ? 'green-border' : 'red-border'}">
         <div class="card-head">
           <div class="status-icon">
             <img src="./assets/${issue.status === "open" ? 'Open-Status' : 'Closed-Status'}.png" alt="">
           </div>
-          <p class="priority">${issue.priority}</p>
+          <p class="priority ${issue.priority === 'high' ? 'priority-high' : issue.priority === 'medium' ? 'priority-medium' : 'priority-low'}">${issue.priority}</p>
         </div>
         <h3 class="card-title">${issue.title}</h3>
         <p class="card-description">${issue.description}</p>
         <div class="card-labels-container">
-          <p class="card-label> help </p>
-        </div>
-        <hr>
-        <div class="card-footer">
-          <p class="card-author">#1 by ${issue.author}</p>
-          <p class="card-created-date">${issue.createdAt}</p>
-        </div>
+          ${issue.labels.map(label => `<p class ="card-label ${label === 'enhancement' ? 'green-label' : label === 'bug' ? 'red-label' : label === 'help wanted' ? 'yellow-label' : 'gray-label'}">${label}</p>`).join('')}
+        </div >
+      <div class="card-footer">
+        <p class="card-author">#<span>${issue.id} </span> by ${issue.author}</p>
+        <p class="card-created-date">${showDate(issue.createdAt)
+        }</p>
       </div>
-    `
+    </div>
+  `
     });
   }
+}
+function showDate(inp) {
+  const date = new Date(inp);
+  return date.toLocaleDateString('en-US');
 }
 
 
