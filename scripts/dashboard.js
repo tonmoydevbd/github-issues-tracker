@@ -31,7 +31,7 @@ function renderCard(data) {
   } else {
     data.forEach(issue => {
       cardContainer.innerHTML += `
-    <div class="card">
+    <div class="card ${issue.status === "open" ? 'green-border' : 'red-border'}">
         <div class="card-head">
           <div class="status-icon">
             <img src="./assets/${issue.status === "open" ? 'Open-Status' : 'Closed-Status'}.png" alt="">
