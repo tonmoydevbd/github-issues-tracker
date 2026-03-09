@@ -55,7 +55,8 @@ button:active {
 }
 
 #search-btn,
-.active-tab {
+.active-tab,
+.modal-btn {
   background-color: #4A00FF;
   color: white;
   border: none;
@@ -279,7 +280,7 @@ header {
   grid-template-columns: repeat(4, 1fr);
   gap: .5rem;
   padding: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .card {
@@ -396,4 +397,99 @@ header {
 
 span .loading {
   text-align: center;
+}
+
+/* modal part  */
+.modal-box {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#modal-heading {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal-meta-data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.issue-status {
+
+  color: var(--body-bg-color);
+  text-transform: capitalize;
+  border-radius: 20px;
+  padding: .5rem 1rem;
+}
+
+.issue-status-open {
+  background-color: var(--green-color);
+}
+
+.issue-status-closed {
+  background-color: purple;
+}
+
+.issue-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.issue-badge p {
+  padding: .5rem 1rem;
+  border-radius: 20px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: var(--section-bg-color);
+}
+
+.assignee-name {
+  min-width: 50%;
+}
+
+.assignee {
+  font-weight: 600;
+  color: var(--heading-color);
+  text-transform: capitalize;
+}
+
+.modal-priority {
+  min-width: 50%;
+}
+
+.priority-badge {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: .75rem;
+  border-radius: 20px;
+  display: inline-block;
+  padding: .5rem 1rem;
+}
+
+.modal-priority-high {
+  background-color: var(--red-color);
+}
+
+.modal-priority-medium {
+  background-color: yellow;
+}
+
+.modal-priority-low {
+  background-color: gray;
+}
+
+.modal-btn {
+  padding: .5rem 1rem;
+  min-width: auto;
 }
