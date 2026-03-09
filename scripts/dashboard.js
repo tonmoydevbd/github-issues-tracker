@@ -14,16 +14,14 @@ const cardContainer = document.querySelector('.card-container');
 const loadingContainer = document.querySelector('.loading-container');
 
 manageLoading();
-setTimeout(() => {
-  fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
-    .then(res => res.json())
-    .then(data => {
-      allIssues = data.data;
-      openIssues = allIssues.filter(issue => issue.status === 'open');
-      closedIssues = allIssues.filter(issue => issue.status === 'closed');
-      renderCard(allIssues);
-    })
-}, 2000)
+fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
+  .then(res => res.json())
+  .then(data => {
+    allIssues = data.data;
+    openIssues = allIssues.filter(issue => issue.status === 'open');
+    closedIssues = allIssues.filter(issue => issue.status === 'closed');
+    renderCard(allIssues);
+  })
 
 // all event listener 
 
@@ -63,14 +61,14 @@ function searchResult(searchText) {
   fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
     .then(res => res.json())
     .then(data => renderCard(data.data))
+  cardContainer.innerHTML = '';
+  loadingContainer.classList.remove('hide');
 }
 
 function renderCard(data) {
-  // loadingContainer.innerHTML = '';
   loadingContainer.classList.add('hide');
   cardContainer.innerHTML = '';
   if (!data) {
-    // manageLoading(cardContainer, true);
     alert('Unable to fetch data');
   } else {
     data.forEach(issue => {
@@ -115,9 +113,8 @@ function getData(id) {
 }
 function showModal(data) {
   const modalBox = document.querySelector('.modal-box');
-  // modalBox.innerHTML = '';
   if (!data) {
-    manageLoading(modalBox, true);
+    alert('Unable to fetch data!');
   } else {
     modalBox.innerHTML = `
     <h3 id="modal-heading">${data.title}</h3>

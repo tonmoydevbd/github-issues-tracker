@@ -208,7 +208,7 @@ header {
   gap: 1rem;
 }
 
-.input-item {
+.search-input-item {
   display: flex;
   align-items: center;
   position: relative;
@@ -281,7 +281,7 @@ header {
 }
 
 .purple-circle {
-  color: var(--red-color);
+  color: purple;
 }
 
 /* card style  */
@@ -290,7 +290,6 @@ header {
   grid-template-columns: repeat(4, 1fr);
   gap: .5rem;
   padding: 1.5rem;
-  /* text-align: center; */
 }
 
 .card {
@@ -463,7 +462,6 @@ span .loading {
 .modal-footer {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   background-color: var(--section-bg-color);
 }
 
@@ -496,7 +494,8 @@ span .loading {
 }
 
 .modal-priority-medium {
-  background-color: yellow;
+  background-color: rgb(240, 240, 159);
+  color: black;
 }
 
 .modal-priority-low {
@@ -517,14 +516,12 @@ span .loading {
   header {
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: .5rem;
     padding: .5rem 0 0;
   }
 
   .tab-container {
     justify-content: center;
-    /* gap: .5rem;
-    padding: .5rem; */
   }
 
   .container {
@@ -538,13 +535,13 @@ span .loading {
 
 
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Small devices (portrait tablets and large phones, 600px and bellow) */
 @media screen and (max-width: 600px) {
   header {
     width: 90%;
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    gap: .5rem;
     padding: .5rem 0 0;
   }
 
