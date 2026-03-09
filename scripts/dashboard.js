@@ -113,13 +113,13 @@ function showModal(data) {
     <h3 id="modal-heading">${data.title}</h3>
         <div class="modal-meta-data">
           <p class="issue-status ${data.status === 'closed' ? 'issue-status-closed' : 'issue-status-open'}">${data.status}</p>
-          <p>&bull;</p>
+          <p class="only-dot">&bull;</p>
           <p><span>${data.status}</span> by <span>${data.author}</span></p>
-          <p>&bull;</p>
+          <p class="only-dot">&bull;</p>
           <p>${showDate(data.createdAt)}</p>
         </div>
         <div class="issue-badge">
-          ${data.labels.map(label => `<p class="${label === 'enhancement' ? 'green-label' : label === 'bug' ? 'red-label' : label === 'help wanted' ? 'yellow-label' : 'gray-label'} ">${label}</p>`).join('')}
+          ${data.labels.map(label => `<p class="label ${label === 'enhancement' ? 'green-label' : label === 'bug' ? 'red-label' : label === 'help wanted' ? 'yellow-label' : 'gray-label'} ">${label}</p>`).join('')}
         </div>
         <p class="issue-description">${data.description}</p>
         <div class="modal-footer">

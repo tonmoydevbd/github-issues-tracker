@@ -201,6 +201,11 @@ header {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
@@ -241,7 +246,7 @@ header {
 .issue-count-container {
   display: flex;
   gap: .5rem;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .aperture-icon {
@@ -249,7 +254,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* max-width: 50px; */
+  min-width: 50px;
   border-radius: 50%;
   padding: .5rem;
 }
@@ -332,6 +337,10 @@ header {
 .priority-low {
   background-color: rgb(240, 232, 232);
   color: gray;
+}
+
+.issue-badge p {
+  text-transform: uppercase;
 }
 
 .green-label {
@@ -492,4 +501,70 @@ span .loading {
 .modal-btn {
   padding: .5rem 1rem;
   min-width: auto;
+}
+
+
+
+
+/* responsive part  */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 600px) {
+  header {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: .5rem 0 0;
+  }
+
+  .search-form {
+    flex-wrap: wrap;
+    gap: .25rem;
+  }
+
+  #search-input {
+    padding: .25rem .25rem .25rem 2.5rem;
+    max-width: 200px;
+  }
+
+  button {
+    padding: .25rem .5rem;
+    min-width: 100px;
+  }
+
+  .container {
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .tab-container {
+    justify-content: center;
+    gap: .5rem;
+    padding: .5rem;
+  }
+
+  .issue-status-bar {
+    flex-direction: column;
+    align-items: start;
+    padding: .5rem;
+    gap: 1.5rem;
+  }
+
+  .indicator {
+    justify-content: start;
+  }
+
+  .card-container {
+    grid-template-columns: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .modal-box {
+    padding: 1rem;
+    gap: .5rem;
+  }
+
+  .modal-meta-data {
+    gap: 0.5rem;
+  }
 }
