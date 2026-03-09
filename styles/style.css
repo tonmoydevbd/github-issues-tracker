@@ -568,3 +568,14 @@ span .loading {
     gap: 0.5rem;
   }
 }
+
+/* Medium devices (landscape tablets, 768px and bellow) */
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
