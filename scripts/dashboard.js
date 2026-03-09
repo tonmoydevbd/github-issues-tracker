@@ -2,7 +2,19 @@ let allIssues = [];
 let openIssues = [];
 let closedIssues = [];
 const issueCountEl = document.querySelector('#issue-count');
+const searchForm = document.querySelector('.search-form');
 
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const inputText = document.querySelector('.search-form input').value;
+  searchResult(inputText)
+})
+
+function searchResult(searchText) {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    .then(res => res.json())
+    .then(data => renderCard(data.data))
+}
 
 setTimeout(() => {
   fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
@@ -34,7 +46,7 @@ function renderCard(data) {
   } else {
     data.forEach(issue => {
       cardContainer.innerHTML += `
-      <div onclick="modalData(${issue.id})" class="card ${issue.status === "open" ? 'green-border' : 'red-border'}">
+      <div onclick="getData(${issue.id})" class="card ${issue.status === "open" ? 'green-border' : 'red-border'}">
         <div class="card-head">
           <div class="status-icon">
             <img src="./assets/${issue.status === "open" ? 'Open-Status' : 'Closed-Status'}.png" alt="">
@@ -86,7 +98,7 @@ function showDate(inp) {
   return date.toLocaleDateString('en-US');
 }
 
-function modalData(id) {
+function getData(id) {
   fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
     .then(res => res.json())
     .then(data => showModal(data.data));
