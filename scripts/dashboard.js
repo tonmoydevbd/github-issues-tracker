@@ -1,21 +1,19 @@
+// data array 
 let allIssues = [];
 let openIssues = [];
 let closedIssues = [];
-const issueCountEl = document.querySelector('#issue-count');
+
+// all variable
 const searchForm = document.querySelector('.search-form');
+const issueCountEl = document.querySelector('#issue-count');
+const tabContainer = document.querySelector('.tab-container');
+const allTab = tabContainer.children[0];
+const openTab = tabContainer.children[1];
+const closedTab = tabContainer.children[2];
+const cardContainer = document.querySelector('.card-container');
+const loadingContainer = document.querySelector('.loading-container');
 
-searchForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const inputText = document.querySelector('.search-form input').value;
-  searchResult(inputText)
-})
-
-function searchResult(searchText) {
-  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
-    .then(res => res.json())
-    .then(data => renderCard(data.data))
-}
-
+manageLoading();
 setTimeout(() => {
   fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues')
     .then(res => res.json())
@@ -26,23 +24,54 @@ setTimeout(() => {
       renderCard(allIssues);
     })
 }, 2000)
-const tabContainer = document.querySelector('.tab-container');
-const allTab = tabContainer.children[0];
-const openTab = tabContainer.children[1];
-const closedTab = tabContainer.children[2];
-const cardContainer = document.querySelector('.card-container');
 
-function manageLoading(container, status) {
-  if (status) {
-    container.innerHTML = `<span class="loading loading-spinner loading-xl "></span>`
-  }
+// all event listener 
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const inputText = document.querySelector('.search-form input').value;
+  searchResult(inputText);
+  allTab.classList.add('active-tab');
+  openTab.classList.remove('active-tab');
+  closedTab.classList.remove('active-tab');
+})
+
+allTab.addEventListener('click', () => {
+  allTab.classList.add('active-tab');
+  openTab.classList.remove('active-tab');
+  closedTab.classList.remove('active-tab');
+  renderCard(allIssues);
+})
+
+openTab.addEventListener('click', () => {
+  openTab.classList.add('active-tab');
+  allTab.classList.remove('active-tab');
+  closedTab.classList.remove('active-tab');
+  renderCard(openIssues);
+})
+
+closedTab.addEventListener('click', () => {
+  closedTab.classList.add('active-tab');
+  allTab.classList.remove('active-tab');
+  openTab.classList.remove('active-tab');
+  renderCard(closedIssues);
+})
+
+// all function 
+
+function searchResult(searchText) {
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+    .then(res => res.json())
+    .then(data => renderCard(data.data))
 }
 
-
 function renderCard(data) {
+  // loadingContainer.innerHTML = '';
+  loadingContainer.classList.add('hide');
   cardContainer.innerHTML = '';
   if (!data) {
-    manageLoading(cardContainer, true);
+    // manageLoading(cardContainer, true);
+    alert('Unable to fetch data');
   } else {
     data.forEach(issue => {
       cardContainer.innerHTML += `
@@ -70,28 +99,9 @@ function renderCard(data) {
   issueCountEl.innerText = data.length;
 }
 
-
-
-allTab.addEventListener('click', () => {
-  allTab.classList.add('active-tab');
-  openTab.classList.remove('active-tab');
-  closedTab.classList.remove('active-tab');
-  renderCard(allIssues);
-})
-
-openTab.addEventListener('click', () => {
-  openTab.classList.add('active-tab');
-  allTab.classList.remove('active-tab');
-  closedTab.classList.remove('active-tab');
-  renderCard(openIssues);
-})
-
-closedTab.addEventListener('click', () => {
-  closedTab.classList.add('active-tab');
-  allTab.classList.remove('active-tab');
-  openTab.classList.remove('active-tab');
-  renderCard(closedIssues);
-})
+function manageLoading() {
+  loadingContainer.innerHTML = `<span class="loading loading-bars loading-xl"></span>`
+}
 
 function showDate(inp) {
   const date = new Date(inp);

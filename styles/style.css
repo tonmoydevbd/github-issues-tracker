@@ -177,6 +177,11 @@ input {
 
 
 /* dashbord page  */
+.loading-container {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
 
 header {
   max-width: 1440px;
@@ -534,7 +539,7 @@ span .loading {
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   header {
     width: 90%;
     flex-direction: column;
